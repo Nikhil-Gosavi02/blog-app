@@ -1,0 +1,7 @@
+package com.blog.apis.services;
+
+public interface UserService {
+
+	
+	UserDto createUser(UserDto user);
+}

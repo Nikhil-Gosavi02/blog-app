@@ -1,0 +1,2 @@
+spring.application.name=Blog-app-apis
+server.port=9090

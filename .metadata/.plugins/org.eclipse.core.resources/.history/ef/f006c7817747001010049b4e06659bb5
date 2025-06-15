@@ -1,0 +1,9 @@
+package com.blog.apis.services;
+
+import com.blog.apis.payloads.UserDto;
+
+public interface UserService {
+
+	
+	UserDto createUser(UserDto user);
+}
