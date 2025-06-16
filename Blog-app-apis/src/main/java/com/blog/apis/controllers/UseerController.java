@@ -1,14 +1,21 @@
 package com.blog.apis.controllers;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.blog.apis.payloads.ApiResponce;
 import com.blog.apis.payloads.UserDto;
 import com.blog.apis.services.UserService;
 
@@ -30,7 +37,33 @@ public class UseerController {
 	}
 	
 	//put - update user
+	@PutMapping("/{userId}")
+	public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto,@PathVariable("userId") Integer uid)
+	{
+	 	UserDto updateUser = this.userService.updateUser(userDto, uid);
+	 	return ResponseEntity.ok(updateUser);
+	}
+	
 	//delete - delete user
+	@DeleteMapping("/{userId}")
+	public ResponseEntity<?> deleteUser(@PathVariable("userId") Integer uid)
+	{
+		this.userService.deleteUser(uid);
+		return new ResponseEntity<ApiResponce>(new ApiResponce("User deleted Succesfully",true),HttpStatus.OK);
+	}
+	
+	//get 
+	@GetMapping("/")
+	public ResponseEntity<List<UserDto>> getAllUsers()
+	{
+		return ResponseEntity.ok(this.userService.getAllUsers());
+	}
+	
+	
 	//get - user get
-
+	@GetMapping("/{userId}")
+	public ResponseEntity<UserDto> getSingleUsers(@PathVariable Integer userId)
+	{
+		return ResponseEntity.ok(this.userService.getUserById(userId));
+	}
 }
