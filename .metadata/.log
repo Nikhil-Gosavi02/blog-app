@@ -804,3 +804,35 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2025-06-19 10:56:03.783
 !MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:31.215
+!MESSAGE Classpath changed for project: Blog-app-apis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:32.078
+!MESSAGE Classpath changed for project: Blog-app-apis
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2025-06-19 15:10:34.102
+!MESSAGE executing callback sts4.classpath.csytrlco FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-06-19 15:10:34.104
+!MESSAGE TimeoutException
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:31)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:48.060
+!MESSAGE Classpath changed for project: Blog-app-apis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:48.335
+!MESSAGE Classpath changed for project: Blog-app-apis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:49.171
+!MESSAGE Classpath changed for project: Blog-app-apis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-06-19 15:10:58.227
+!MESSAGE Classpath changed for project: Blog-app-apis
