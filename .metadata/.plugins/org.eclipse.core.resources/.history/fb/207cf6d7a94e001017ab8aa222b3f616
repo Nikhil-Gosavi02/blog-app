@@ -1,0 +1,30 @@
+package com.blog.apis.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.blog.apis.entity.Category;
+import com.blog.apis.payloads.CategoryDto;
+import com.blog.apis.services.CategoryService;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+
+@RestController
+@RequestMapping("/api/categeries")
+public class CategoryController {
+
+	@Autowired
+	private CategoryService categoryService;
+	
+	// create
+	@PostMapping("/")
+	public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto cateogDto);
+	{
+		Category createCategory = this.categoryService.createCategory(cateogDto);
+	}
+	
+}

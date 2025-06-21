@@ -1,0 +1,5 @@
+package com.blog.apis.services.impl;
+
+public class CategoryServiceImpl {
+
+}

@@ -1,0 +1,35 @@
+package com.blog.apis.repositories;
+
+import java.util.List;
+import java.util.Locale.Category;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.blog.apis.payloads.CategoryDto;
+
+public interface CategoryRepo extends JpaRepository<Category, Integer>{
+
+	
+	// create
+	
+		CategoryDto createCategory(CategoryDto categoryDto);
+		
+		
+		// update
+		CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId);
+		
+		
+		// delete
+		
+		void deleteCategory(Integer categoryId);
+		
+		// get
+		
+		CategoryDto getCategory(Integer categoryId);
+		
+		// getAll
+		
+		List<CategoryDto> getCategories();
+
+}
+ 

@@ -1,0 +1,5 @@
+package com.blog.apis.controllers;
+
+public class CategoryController {
+
+}
