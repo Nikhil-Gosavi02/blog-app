@@ -14,6 +14,8 @@ import com.blog.apis.payloads.ApiResponce;
 import com.blog.apis.payloads.CategoryDto;
 import com.blog.apis.services.CategoryService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping("/api/categeries")
+@RequestMapping("/api/categories")
 public class CategoryController {
 
 	@Autowired
@@ -30,7 +32,7 @@ public class CategoryController {
 	
 	// create
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto cateogDto)
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto cateogDto)
 	{
 		CategoryDto createCategory = this.categoryService.createCategory(cateogDto);
 		return new ResponseEntity<CategoryDto>(createCategory, HttpStatus.CREATED);
@@ -39,7 +41,7 @@ public class CategoryController {
 	// update
 	
 	@PutMapping("/{catId}")
-	public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto,@PathVariable Integer catId)
+	public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto,@PathVariable Integer catId)
 	{
 		CategoryDto updatedCategory = this.categoryService.updateCategory(categoryDto,catId);
 		return new ResponseEntity<CategoryDto>(updatedCategory, HttpStatus.OK);
